@@ -7,7 +7,7 @@ This project demonstrates authentication, secure database access with Row Level 
 
 ## 🚀 Live Demo
 
-👉 [Add your Vercel URL here]
+👉 https://client-task-dashboard.vercel.app/
 
 ## 📂 GitHub Repository
 
