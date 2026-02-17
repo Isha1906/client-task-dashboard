@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Client Task Dashboard
 
-## Getting Started
+A mini full-stack **Client Task Dashboard** built using **Next.js** and **Supabase**.
+This project demonstrates authentication, secure database access with Row Level Security (RLS), and a dynamic task management UI.
 
-First, run the development server:
+---
+
+## 🚀 Live Demo
+
+👉 [Add your Vercel URL here]
+
+## 📂 GitHub Repository
+
+👉 https://github.com/Isha1906/client-task-dashboard
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+
+* Email magic-link login using Supabase Auth
+* Session-based dashboard access
+* Logout functionality
+
+### 🛡 Database Security (Core Requirement)
+
+* Tasks stored in Supabase PostgreSQL
+* **Row Level Security enabled**
+* **Staff users**
+
+  * Can only view and update tasks assigned to them
+* **Admin users**
+
+  * Can view, edit, and delete all tasks across the system
+
+### 📊 Dashboard UI
+
+* Clean responsive dashboard layout
+* Add new tasks instantly
+* Dynamic filters:
+
+  * Pending
+  * In Progress
+  * Completed
+* Task status updates without page refresh
+
+### ⭐ Custom Ownership Feature
+
+* **Priority labels with colored badges**
+
+  * High → Red
+  * Medium → Blue
+  * Low → Gray
+* Helps financial teams quickly identify urgent client work
+
+---
+
+## 🏗 Tech Stack
+
+* **Frontend:** Next.js (App Router), React
+* **Backend / Database:** Supabase (PostgreSQL)
+* **Authentication:** Supabase Auth
+* **Security:** Supabase Row Level Security (RLS)
+* **Styling:** Custom CSS
+
+---
+
+## ⚙️ Local Setup Instructions
+
+1. Clone repository
+
+```bash
+git clone <repo-url>
+cd client-task-dashboard
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Create environment variables:
+
+Create `.env.local`
+
+```
+NEXT_PUBLIC_SUPABASE_URL=your_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+```
+
+4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Hardest Challenge Faced
 
-## Learn More
+The most challenging part was configuring **Supabase Row Level Security (RLS)** correctly.
+Initially, queries returned empty results because policies were blocking access.
 
-To learn more about Next.js, take a look at the following resources:
+This was debugged by:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Verifying the authenticated user ID
+* Testing RLS conditions in Supabase SQL editor
+* Ensuring the role lookup in the profiles table matched `auth.uid()`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Once the policies were corrected, the dashboard worked as expected.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📌 Future Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Admin UI to assign tasks to staff
+* Due-date & overdue alerts
+* File upload support for client documents
+* Search & sorting functionality
+
+---
+
+## 👩‍💻 Author
+
+Built by **Isha**
