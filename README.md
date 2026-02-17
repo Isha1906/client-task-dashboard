@@ -71,7 +71,7 @@ This project demonstrates authentication, secure database access with Row Level 
 1. Clone repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Isha1906/client-task-dashboard
 cd client-task-dashboard
 ```
 
@@ -86,8 +86,8 @@ npm install
 Create `.env.local`
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=your_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+NEXT_PUBLIC_SUPABASE_URL= "https://ywiirfgspbbzxhtemlqn.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3aWlyZmdzcGJienhodGVtbHFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMTc5OTksImV4cCI6MjA4Njg5Mzk5OX0.a2ZBt2MeNbiPawEtEpHLRnAvTEYLrVAKcyGsGo0pYDc"
 ```
 
 4. Run the development server
