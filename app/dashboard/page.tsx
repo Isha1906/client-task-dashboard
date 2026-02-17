@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [title, setTitle] = useState("");
   const [userId, setUserId] = useState<string | null>(null);
 
-  // ✅ Check logged-in user first
+  // Check logged-in user first
   useEffect(() => {
     const checkUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -28,7 +28,7 @@ export default function Dashboard() {
     checkUser();
   }, []);
 
-  // ✅ Fetch tasks
+  //  Fetch tasks
   const fetchTasks = async () => {
 
     let query = supabase.from("tasks").select("*");
@@ -47,7 +47,7 @@ export default function Dashboard() {
     if (userId) fetchTasks();
   }, [filter, userId]);
 
-  // ✅ Add task (SAFE VERSION)
+  // Add task (SAFE VERSION)
   const addTask = async () => {
 
     if (!title || !userId) return;
@@ -68,7 +68,7 @@ export default function Dashboard() {
     fetchTasks();
   };
 
-  // ✅ Update status safely
+  // Update status safely
   const updateStatus = async (id: string, status: string) => {
 
     const { error } = await supabase
